@@ -10,7 +10,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
 
     # sesuaikan nama database anda dengan di bawah ini
-    url: jdbc:mysql://localhost:3306/apap_db?useSSL=false&serverTimezone=Asia/Jakarta
+    url: jdbc:mysql://localhost:3306/simpel_db?useSSL=false&serverTimezone=Asia/Jakarta
 
     # sesuaikan dengan NAMA dan PASSWORD anda dengan username password di bawah ini
     username: root
