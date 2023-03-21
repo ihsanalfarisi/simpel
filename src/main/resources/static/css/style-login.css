@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    margin: auto;
+    background: linear-gradient(180deg, rgba(37, 43, 111, 1) 30%, rgba(75, 36, 71, 0.79) 100%);
+    padding: 50px;
+    color: white;
+    border-radius: 20px;
+    width: 400px;
+    height: 500px;
+}
+
+.wrapper p {
+    margin-top: 40px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    color:magenta;
+    text-decoration: none;
+}
+
+a:hover {
+    color: aqua;
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
