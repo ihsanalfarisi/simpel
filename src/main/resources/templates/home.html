@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HOME</title>
+    <title>Home</title>
+    <object th:include="fragments/fragment :: requirement" th:remove="tag"></object>
+
+
 </head>
 <body>
-  HELLO WORLD
+    <nav th:replace="fragments/fragment :: navbar"></nav>
+<div class="Test">
+    <div th:if="${successtext} " th:replace="fragments/fragment :: alert-success-fragment(successtext=${successtext})"></div>
+    <div th:if="${errortext} " th:replace="fragments/fragment :: alert-error-fragment(errortext=${errortext})"></div>
+    
+    <h1 class="text">Home</h1>
+    <h1 th:text="'Hello '+${#httpServletRequest.remoteUser}+'!'" class="text"></h1>
+</div>
+
+    <div th:replace="fragments/fragment :: scripts" th:remove="tag"></div>
+
 </body>
 </html>

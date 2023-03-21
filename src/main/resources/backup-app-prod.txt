@@ -4,13 +4,14 @@ spring.sql.init.mode: always
 spring:
   # konfigurasi untuk koneksi db
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
 
     # sesuaikan nama database anda dengan di bawah ini
-    url: jdbc:mysql://root:w1hwuur0zzT4zs36VQve@containers-us-west-193.railway.app:5970/railway
+    url: jdbc:mysql://root:Iic8kw6YC5XFd2MyGw2d@containers-us-west-195.railway.app:7946/railway?useSSL=false&serverTimezone=Asia/Jakarta
+
     # sesuaikan dengan NAMA dan PASSWORD anda dengan username password di bawah ini
     username: root
-    password: w1hwuur0zzT4zs36VQve
+    password: Iic8kw6YC5XFd2MyGw2d
 
   jpa:
     properties:
