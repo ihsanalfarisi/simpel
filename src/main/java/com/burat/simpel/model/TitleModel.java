@@ -10,6 +10,7 @@ import org.hibernate.annotations.OnDeleteAction;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity
 @Getter
@@ -37,4 +38,8 @@ public class TitleModel {
     @JoinColumn(name = "id_divisi", referencedColumnName = "id_divisi", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private DivisiModel divisi;
+
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "title")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private List<CompetencyModel> listCompetencyModel;
 }

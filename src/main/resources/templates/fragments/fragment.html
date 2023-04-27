@@ -35,9 +35,36 @@
             <li>
                 <a th:href="@{/training-catalog}">
                     <i class='bx bx-task'></i>
-                    <span class="links_name">Training</span>
+                    <span class="links_name">Training Catalog</span>
                 </a>
-                <span class="tooltip">Training</span>
+                <!-- <div class="iocn-link">
+                    <a href="#">
+                      <i class='bx bx-book-alt' ></i>
+                      <span class="links_name">Posts</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow' ></i>
+                  </div>
+                  <ul class="sub-menu">
+                    <li><a class="links_name" href="#">Posts</a></li>
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Login Form</a></li>
+                    <li><a href="#">Card Design</a></li>
+                  </ul> -->
+                <span class="tooltip">Training Catalog</span>
+            </li>
+            <li th:if="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('admin') || #authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('executive')}">
+                <a th:href="@{/training-recommendation}">
+                    <i class='bx bx-notepad'></i>                    
+                    <span class="links_name">Training Recomendation</span>
+                </a>
+                <span class="tooltip-2">Training Recommendation</span>
+            </li>
+            <li>
+                <a th:href="@{/training-plan}">
+                    <i class='bx bx-calendar' ></i>                    
+                    <span class="links_name">Training Plan</span>
+                </a>
+                <span class="tooltip">Training Plan</span>
             </li>
             <li>
                 <a th:href="@{/comp-dict}">
@@ -53,11 +80,32 @@
                     <span class="links_name">Competency Model</span>
                 </a>
             </li>
+            <li th:if="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('assessor')}">
+                <span class="tooltip">Assessment </span>
+                <a th:href="@{/do-assessment}">
+                    <i class='bx bx-book-content'></i>
+                    <span class="links_name">Assessment</span>
+                </a>
+            </li>
+            <li th:unless="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('executive')}">
+                <span class="tooltip-2">Review Assessment </span>
+                <a th:href="@{/review}">
+                    <i class='bx bx-book-content'></i>
+                    <span class="links_name">Review Assessment</span>
+                </a>
+            </li>
             <li th:if="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('admin')}">
                 <span class="tooltip-2">Account Management </span>
                 <a th:href="@{/account-management}">
                     <i class='bx bxs-user-account'></i>
                     <span class="links_name">Account Management</span>
+                </a>
+            </li>
+            <li>
+                <span class="tooltip">Profile </span>
+                <a th:href="@{/profile}">
+                    <i class='bx bxs-user-circle'></i>                    
+                    <span class="links_name">Profile</span>
                 </a>
             </li>
                 <li>
@@ -104,6 +152,23 @@
           nav.classList.toggle("active");
       }
   </script>
+  <script>
+    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+    
+    for (i = 0; i < dropdown.length; i++) {
+      dropdown[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+        } else {
+          dropdownContent.style.display = "block";
+        }
+      });
+    }
+    </script>
   </div>
 </body>
 

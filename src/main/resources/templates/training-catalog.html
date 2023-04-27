@@ -14,9 +14,9 @@
     <h1 class="text">Training Catalog</h1>
     <div class="container">
       <a  th:if="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('admin')}" th:href="@{/training-catalog/add}"><button class="btn-hover color-1 add-training">+ Add Training</button> </a>
-      <div th:if="${successtext} " th:replace="fragments/fragment :: alert-success-fragment(successtext=${successtext})"></div>
       <div class="card m-4 p-4">
         <div class="card-body">
+          <div th:if="${successtext} " th:replace="fragments/fragment :: alert-success-fragment(successtext=${successtext})"></div>
           <div class="justify-content-center">
             <table class="table">
               <thead>
