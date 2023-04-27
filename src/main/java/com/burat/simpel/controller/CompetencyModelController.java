@@ -35,20 +35,20 @@ public class CompetencyModelController {
     TitleService titleService;
 
     @GetMapping("/competency-model")
-    public String viewCompetencyModel(Model model) {
+    public String viewallCompetencyModel(Model model) {
         List<CompetencyModel> listCompetencyModel = competencyModelService.getAllCompetencyModel();
         model.addAttribute("listCompetencyModel", listCompetencyModel);
-        return "competency-model";
+        return "viewall-competency-model";
     }
 
     @GetMapping("/competency-model/{id}")
-    public String viewallCompetencyLevel(@PathVariable Long id, Model model) {
+    public String viewCompetencyLevel(@PathVariable Long id, Model model) {
         CompetencyModel competencyModel = competencyModelService.getCompetencyModelById(id);
         model.addAttribute("listCompetencyLevel", competencyModel.getListCompetencyLevel());
         model.addAttribute("idModel", id);
         model.addAttribute("title", competencyModel.getTitle());
         model.addAttribute("deskripsi", competencyModel.getDeskripsi());
-        return "viewall-competency-model";
+        return "view-competency-model";
     }
 
     @GetMapping(value = "/competency-model/add")
@@ -131,7 +131,7 @@ public class CompetencyModelController {
     }
 
     @PostMapping(value = "/competency-model/update", params = { "addRow" })
-    public String addRowCompetencyModelUpdate(@ModelAttribute CompetencyModel competencyModel, @ModelAttribute String namaTitle, Model model) {
+    public String addRowCompetencyModelUpdate(@ModelAttribute CompetencyModel competencyModel, Model model) {
         if (competencyModel.getListCompetencyLevel() == null || competencyModel.getListCompetencyLevel().size() == 0) {
             competencyModel.setListCompetencyLevel(new ArrayList<>());
         }
@@ -169,5 +169,4 @@ public class CompetencyModelController {
         redirectAttributes.addFlashAttribute("successtext", "Selamat! Competency Model berhasil diubah");
         return "redirect:/competency-model";
     }
-
 }

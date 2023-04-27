@@ -9,8 +9,7 @@ public interface TrainingService {
     List<TrainingModel> getListTraining();
     TrainingModel getTrainingById(Long trainingID);
     void addTraining(TrainingModel training);
-
     List<CompetencyLevel> processLevelOfTraining(List<CompetencyLevel> levelOfTraining);
-
     void deleteTraining(TrainingModel training);
+    public List<TrainingModel> getSomeTraining();
 }

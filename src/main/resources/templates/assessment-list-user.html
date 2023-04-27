@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Competency Assessment</title>
+  <object th:include="fragments/fragment :: requirement" th:remove="tag"></object>
+
+</head>
+
+<body>
+<nav th:replace="fragments/fragment :: navbar"></nav>
+<div class="Test">
+  <h1 class="text">Competency Assessment</h1>
+  <div class="buttons" style="margin-left: 43px;">
+    <h5>List User</h5> </div>
+  <div class="container">
+    <div class="card m-2 p-4">
+      <div th:if="${successtext} " th:replace="fragments/fragment :: alert-success-fragment(successtext=${successtext})"></div>
+      <div th:if="${errortext} " th:replace="fragments/fragment :: alert-error-fragment(errortext=${errortext})"></div>
+
+      <div class="card-body">
+        <div class="justify-content-center">
+          <h3 th:if="${eventPeriod}" th:text="${eventPeriod.getPeriodName()}"></h3>
+          <table class="table">
+            <thead>
+            <tr>
+              <th class="text-center">Username</th>
+              <th class="text-center">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${listUser != null}"  class="text-center" th:each="user, iterationStatus : ${listUser}">
+              <td th:text="${user.username}"></td>
+              <td>
+                <a th:href="@{/do-assessment/} + ${user.accountUuid}"><button class="btn btn-primary">Select</button></a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div th:replace="fragments/fragment :: scripts" th:remove="tag"></div>
+
+</body>
+
+</html>

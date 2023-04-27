@@ -9,11 +9,22 @@ INSERT IGNORE INTO divisi (id_divisi, nama, deskripsi) VALUES
 INSERT IGNORE INTO title (id_title, id_divisi, nama, deskripsi) VALUES
 ('1', '1', 'None', 'None'),
 ('2', '2', 'Staff HR', 'lorem ipsum'),
-('3', '3', 'Staff Finance', 'lorem ipsum'),
-('4', '3', 'Manager Finance', 'lorem ipsum'),
-('5', '3', 'Vice President Finance', 'lorem ipsum'),
-('6', '3', 'President Finance', 'lorem ipsum'),
-('7', '6', 'External', 'lorem ipsum');
+('3', '2', 'Manager HR', 'lorem ipsum'),
+('4', '2', 'Vice President HR', 'lorem ipsum'),
+('5', '2', 'President HR', 'lorem ipsum'),
+('6', '3', 'Staff Finance', 'lorem ipsum'),
+('7', '3', 'Manager Finance', 'lorem ipsum'),
+('8', '3', 'Vice President Finance', 'lorem ipsum'),
+('9', '3', 'President Finance', 'lorem ipsum'),
+('10', '4', 'Staff Marketing', 'lorem ipsum'),
+('11', '4', 'Manager Marketing', 'lorem ipsum'),
+('12', '4', 'Vice President Marketing', 'lorem ipsum'),
+('13', '4', 'President Marketing', 'lorem ipsum'),
+('14', '5', 'Staff IT', 'lorem ipsum'),
+('15', '5', 'Manager IT', 'lorem ipsum'),
+('16', '5', 'Vice President IT', 'lorem ipsum'),
+('17', '5', 'President IT', 'lorem ipsum'),
+('18', '6', 'External', 'lorem ipsum');
 
 INSERT IGNORE INTO admin (account_uuid, username, password, nama_depan, nama_belakang, jenis_kelamin, tanggal_lahir, email, no_telepon, role, id_divisi, id_title) VALUES
 ('a1d2m3i4n5', 'admin', '$2a$12$MACje9kvEN4TvrZIoXgi2ewNxQCLBa9Ljxoy/hIEvOGF1doy54gVa', 'Admin', 'Admin', 0, '2002-02-16', 'admin@burat.com', '082131415900', 'admin', '1', '1');
@@ -22,10 +33,23 @@ INSERT IGNORE INTO executive (account_uuid, username, password, nama_depan, nama
 ('jdfh81wuy0jie', 'executive', '$2a$12$zwgG5BiE7OEh/eRo/MDdK.8guUMgztPrbQpw2VVJEV5KhQxsUpSuW', 'CEO', 'Entrepeneur', 0, '1964-02-16', 'jeffrey@bezos.com', '082131415900', 'executive', '3', '5');
 
 INSERT IGNORE INTO assessor (account_uuid, username, password, nama_depan, nama_belakang, jenis_kelamin, tanggal_lahir, email, no_telepon, role, id_divisi, id_title) VALUES
-('j329urff9du', 'assessor', '$2a$12$YoXCSz6mFxx3TJOsDssHiufA4P/pjkDBSBgvcO2ABn1vuQOldBPdu', 'Penilai', 'External', 1, '2002-02-16', 'assessor@burat.com', '082131415900', 'assessor', '6', '7');
+('j329urff9du', 'assessor', '$2a$12$YoXCSz6mFxx3TJOsDssHiufA4P/pjkDBSBgvcO2ABn1vuQOldBPdu', 'Penilai', 'External', 1, '2002-02-16', 'assessor@burat.com', '082131415900', 'assessor', '6', '18'),
+('zxy234ib910', 'samsmith', '$2a$12$NVBJ05aTDwvEfw/GU82/PuRrKYrgLdIxQO9.KSXa0ceKpTZIVg5ai', 'Sam', 'Smith', 1, '1999-12-12', 'sam.smith@gmail.com', '081234567890', 'assessor', '6', '18'),
+('zxy234ib911', 'taylorswift', '$2a$12$CT81FSbuQzYLswgX0eDgAeNmp.4CCGx6pIU1Tgeb3UftoemGuH82K', 'Taylor', 'Swift', 0, '1999-12-12', 'taylor.swift@gmail.com', '081234567890', 'assessor', '6', '18'),
+('zxy234ib912', 'brunomars', '$2a$12$c2VYMSHvvqcyKnVheOCVauiyvhqV3/5ze5zLDnEpiWSJ.rdpOCpFW', 'Bruno', 'Mars', 1, '1999-12-12', 'bruno.mars@gmail.com', '081234567890', 'assessor', '6', '18');
 
 INSERT IGNORE INTO user (account_uuid, username, password, nama_depan, nama_belakang, jenis_kelamin, tanggal_lahir, email, no_telepon, role, id_divisi, id_title) VALUES
-('zxy234ib834', 'user', '$2a$12$sLEkJ0hNQvOly1j64rnIWe0C0nL1VYbNTEW/o/RgTTbphr9pvfIfu', 'Staff', 'Kebersihan', 1, '2002-02-16', 'workingclass@burat.com', '082131415900', 'user', '2', '2');
+('zxy234ib834', 'user', '$2a$12$sLEkJ0hNQvOly1j64rnIWe0C0nL1VYbNTEW/o/RgTTbphr9pvfIfu', 'Staff', 'Kebersihan', 1, '2002-02-16', 'workingclass@burat.com', '082131415900', 'user', '2', '2'),
+('zxy234ib835', 'eren', '$2a$12$0.iVJBfC2KZg8qfPjrLbMepOCtf29nNXfO/l6feh2gXKJQjlaf/XG', 'Eren', 'Yeager', 1, '1999-12-12', 'eren.yeager@gmail.com', '081234567890', 'user', '2', '2'),
+('zxy234ib836', 'mikasa', '$2a$12$mEQkDc1W8iLFH5EBrXj31eOJAhozb6gk2/lKMahjq9K/jFWLuFa7O', 'Mikasa', 'Ackerman', 0, '1999-11-11', 'mikasa.ackerman@gmail.com', '081234567891', 'user', '2', '2'),
+('zxy234ib837', 'armin', '$2a$12$WhSwVlw1yow1TJezpDyG7.eQCz/HYN9qQVAyilSNrubDJhrr5JeCe', 'Armin', 'Arlert', 1, '1999-10-10', 'armin.arlert@gmail.com', '082134567892', 'user', '2', '2'),
+('zxy234ib838', 'jean', '$2a$12$rrdIdQT8vblYOov8mC5wKeLqqNKYiyjtxnxO5nTWb0jaU4aLArUsu', 'Jean', 'Kirstein', 1, '1999-09-09', 'jean.kirstein@gmail.com', '082134567893', 'user', '3', '6'),
+('zxy234ib839', 'connie', '$2a$12$SnQERqYtR5MWnf36ruOxweRtHLPHE.Ku5.fyusd0s.o/B.6xOHV8e', 'Connie', 'Springer', 1, '1999-08-08', 'connie.springer@gmail.com', '082134567894', 'user', '3', '6'),
+('zxy234ib840', 'historia', '$2a$12$3aqqX58JCM5gapm4YfV9EeQ0LtaOVB/FcjtGX0LaQpm50AUGS2k9K', 'Historia', 'Reiss', 0, '1999-07-07', 'historia.reiss@gmail.com', '082134567895', 'user', '4', '10'),
+('zxy234ib841', 'levi', '$2a$12$stvmkOyoWW844dinH3HwC.ZU8ZN7r8UqvcbKc1r83tPios0SMGdde', 'Levi', 'Ackerman', 1, '1990-12-12', 'levi.ackerman@gmail.com', '082134567896', 'user', '4', '10'),
+('zxy234ib842', 'hange', '$2a$12$B31PpUea5LdJVu/VDT5wbeijqV/gcxUGZXwd9tveyMfpXuPKrbsKW', 'Hange', 'Zoe', 0, '1990-11-11', 'hange.zoe@gmail.com', '082134567897', 'user', '4', '10'),
+('zxy234ib843', 'erwin', '$2a$12$/Kdyw1V2d8ap7KZGB74dAOYxEWQxHy6kynjqbUDS2vSB0sexE13ui', 'Erwin', 'Smith', 1, '1985-12-12', 'erwin.smith@gmail.com', '082134567898', 'user', '5', '14'),
+('zxy234ib844', 'zeke', '$2a$12$sWVIAsRfoPUc9/bmWVRDv.OMm8VkNp0oIguU1uNUawRpgYKPcAi1C', 'Zeke', 'Yeager', 1, '1985-11-11', 'zeke.yeager@gmail.com', '082134567899', 'user', '5', '14');
 
 INSERT IGNORE INTO competency (id_comp, nama, deskripsi) VALUES
 ('1', 'Pengelolaan Remunerasi', 'Kemampuan mengelola dan mengembangkan sistem remunerasi yang meliputi Administrasi Personalia dan Sistem Penggajian (kompensasi, benefit dan payroll) diperusahaan untuk meningkatkan kesejahteraan karyawan.'),
@@ -461,19 +485,111 @@ INSERT IGNORE INTO training_level (id_training, id_level) VALUES
 ('14', '194');
 
 INSERT IGNORE INTO competency_model (id_model, id_title, deskripsi) VALUES
-	('1', '3', 'Posisi ini bertugas untuk merencanakan, mengarahkan, dan mengendalikan operasi akuntansi dan keuangan.'),
-	('2', '4', 'Posisi ini bertugas menyediakan laporan keuangan dan menafsirkan informasi keuangan kepada staf manajerial sambil merekomendasikan langkah-langkah tindakan lanjutan.'),
-	('3', '5', 'Posisi ini bertanggung jawab untuk memproses aktivitas keuangan yang memaksimalkan keuntungan bagi sebuah organisasi.'),
-	('4', '6', 'Posisi ini bertugas mengarahkan perencanaan keuangan dan strategi.');
+	('1', '2', 'Staff HR'),
+	('2', '3', 'Manager HR'),
+	('3', '4', 'Vice President HR'),
+	('4', '5', 'President HR'),
+	('5', '6', 'Posisi ini bertugas untuk merencanakan, mengarahkan, dan mengendalikan operasi akuntansi dan keuangan.'),
+	('6', '7', 'Posisi ini bertugas menyediakan laporan keuangan dan menafsirkan informasi keuangan kepada staf manajerial sambil merekomendasikan langkah-langkah tindakan lanjutan.'),
+	('7', '8', 'Posisi ini bertanggung jawab untuk memproses aktivitas keuangan yang memaksimalkan keuntungan bagi sebuah organisasi.'),
+	('8', '9', 'Posisi ini bertugas mengarahkan perencanaan keuangan dan strategi.'),
+	('9', '10', 'Staff Marketing'),
+	('10', '11', 'Manager Marketing'),
+	('11', '12', 'Vice President Marketing'),
+	('12', '13', 'President Marketing'),
+	('13', '14', 'Staff IT'),
+	('14', '15', 'Manager IT'),
+	('15', '16', 'Vice President IT'),
+	('16', '17', 'President IT');
 	
 INSERT IGNORE INTO title_comp (id_model, id_level) VALUES
-	('1', '102'),
-	('1', '112'),
-	('2', '103'),
-	('2', '108'),
-	('2', '113'),
-	('3', '104'),
-	('3', '114'),
-	('4', '105'),
-	('4', '110'),
-	('4', '115');
+	('1', '27'),
+	('1', '177'),
+	('1', '267'),
+	('2', '28'),
+	('2', '178'),
+	('2', '268'),
+	('3', '29'),
+	('3', '179'),
+	('3', '269'),
+	('4', '30'),
+	('4', '180'),
+	('4', '270'),
+	('6', '102'),
+	('6', '107'),
+	('6', '112'),
+	('7', '103'),
+	('7', '108'),
+	('7', '113'),
+	('8', '104'),
+	('8', '109'),
+	('8', '114'),
+	('9', '105'),
+	('9', '110'),
+	('9', '115'),
+	('10', '37'),
+	('10', '42'),
+	('10', '242'),
+	('11', '38'),
+	('11', '43'),
+	('11', '243'),
+	('12', '39'),
+	('12', '44'),
+	('12', '244'),
+	('13', '40'),
+	('13', '45'),
+	('13', '245'),
+	('14', '187'),
+	('14', '197'),
+	('14', '282'),
+	('15', '188'),
+	('15', '198'),
+	('15', '283'),
+	('16', '189'),
+	('16', '199'),
+	('16', '284'),
+	('17', '190'),
+	('17', '200'),
+	('17', '285');
+
+INSERT IGNORE INTO `event_period` (`id_event_period`, `date_end`, `date_start`, `deskripsi`, `period_name`,`jenis`, `status`) VALUES
+    ('1', '2023-04-12', '2023-04-28', 'deskripsi', 'Assessment 1', 'assessment', 'Active');
+
+INSERT IGNORE INTO `assessment` (id_assess, date, note, user_uuid, assessor_uuid, id_event_period) VALUES
+    ('1', '2023-07-12', 'Proses assessment berjalan lancar.', 'zxy234ib835', 'zxy234ib910', '1'),
+	('2', '2023-07-13', 'Proses assessment berjalan lancar.', 'zxy234ib835', 'zxy234ib911', '1'),
+	('3', '2023-07-14', 'Proses assessment berjalan lancar.', 'zxy234ib836', 'zxy234ib910', '1'),
+	('4', '2023-07-15', 'Proses assessment berjalan lancar.', 'zxy234ib836', 'zxy234ib911', '1'),
+	('5', '2023-07-16', 'Proses assessment berjalan lancar.', 'zxy234ib837', 'zxy234ib910', '1'),
+	('6', '2023-07-12', 'Proses assessment berjalan lancar.', 'zxy234ib837', 'zxy234ib911', '1');
+
+INSERT INTO `assessment_level` (id_assessment_level, result, gap, id_assess, id_comp_level) VALUES
+    ('1', '1', '-1', '1', '27'),
+    ('2', '1', '-1', '1', '177'),
+    ('3', '1', '-1', '1', '267'),
+    ('4', '1', '-1', '2', '27'),
+    ('5', '2', '0', '2', '177'),
+    ('6', '1', '-1', '2', '267'),
+    ('7', '2', '0', '3', '27'),
+    ('8', '2', '0', '3', '177'),
+    ('9', '1', '-1', '3', '267'),
+    ('10', '1', '-1', '4', '27'),
+    ('11', '1', '-1', '4', '177'),
+    ('12', '2', '0', '4', '267'),
+    ('13', '2', '0', '5', '27'),
+    ('14', '2', '0', '5', '177'),
+    ('15', '2', '0', '5', '267'),
+    ('16', '1', '-1', '6', '27'),
+    ('17', '2', '0', '6', '177'),
+    ('18', '2', '0', '6', '267');
+
+INSERT IGNORE INTO `review_assessment` (id_review_assessment, count, rerata_gap, total, id_comp_level, id_event_period, user_uuid) VALUES
+     ('1', '2', '-1', '2', '27', '1', 'zxy234ib835'),
+     ('2', '2', '0', '3', '177', '1', 'zxy234ib835'),
+     ('3', '2', '-1', '2', '267', '1', 'zxy234ib835'),
+     ('4', '2', '-1', '3', '27', '1', 'zxy234ib836'),
+     ('5', '2', '-1', '3', '177', '1', 'zxy234ib836'),
+     ('6', '2', '-1', '3', '267', '1', 'zxy234ib836'),
+     ('7', '2', '-1', '3', '27', '1', 'zxy234ib837'),
+     ('8', '2', '0', '4', '177', '1', 'zxy234ib837'),
+     ('9', '2', '0', '4', '267', '1', 'zxy234ib837');

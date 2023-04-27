@@ -28,7 +28,7 @@
                             <br>
 
                             Deskripsi: <br>
-                            <input class="form-control" type="text" th:field="*{deskripsi}" />
+                            <input class="form-control" type="text" th:field="*{deskripsi}" required/>
                             <br>
 
                             <table class="table">
@@ -56,7 +56,7 @@
                                         </td>
                                         <td>
                                             <input class="form-control" type="number" min="1" max="5"
-                                                th:field="*{listCompetencyLevel[__${iterationStatus.index}__].level}" />
+                                                th:field="*{listCompetencyLevel[__${iterationStatus.index}__].level}" required/>
                                         </td>
                                         <td>
                                             <button th:value="${iterationStatus.index}" class="btn btn-danger"

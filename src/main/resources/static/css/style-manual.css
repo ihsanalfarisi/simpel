@@ -239,6 +239,13 @@ nav .logout-2{
     font-size: 65px;
 }
 
+.Test .text-training{
+    margin-left: 209px;
+    margin-top: 5%;
+    font-weight: 400;
+    font-size: 80px;
+}
+
 h1{
     background: -webkit-linear-gradient(#252b6f, #4b2447);
     -webkit-background-clip: text;
@@ -325,3 +332,229 @@ a:link {
 .tombol-add a{
     color: #FFF;
 }
+
+.status0 {
+    padding: 1px 10px;
+    color: #A17A1B;
+    background-color: #FFEBBE;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1px;
+    margin-bottom: 0;
+    border-radius: 15px;
+    width: 100px;
+    text-align: center;
+}
+
+.status1 {
+    padding: 1px 10px;
+    color: #D38345;
+    background-color: #FFDACA; 
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1px;
+    margin-bottom: 0;
+    border-radius: 15px;
+    width: 100px;
+    text-align: center;
+}
+
+.status2 {
+    padding: 1px 10px;
+    color: #32888E;
+    background-color: #CDE4EA;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1px;
+    margin-bottom: 0;
+    border-radius: 15px;
+    width: 100px;
+    text-align: center;
+}
+
+.status3 {
+    padding: 1px 10px;
+    color: #577E51;
+    background-color: #CBE6CA;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 1px;
+    margin-bottom: 0;
+    border-radius: 15px;
+    width: 100px;
+    text-align: center;
+}
+
+.kotak-1{
+    width: 500px;
+    padding: 10px;
+    margin: 0;
+    float: left;
+    box-shadow: 5px 5px 10px gray;
+    display: table-cell; 
+    margin-right: 50px; 
+    margin-left: 42px;
+    border-radius: 13px;
+}
+
+.kotak-2{
+    width: 600px;
+    padding: 10px;
+    margin: 0;
+    box-shadow: 5px 5px 10px gray;
+    border-radius: 13px;
+}
+
+h4{
+    background: -webkit-linear-gradient(#252b6f, #4b2447);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.kotak-1 p{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.kotak-2 p{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.Test .isi{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.Test .bagian{
+    margin-top: 20px;
+}
+.kotak-1 img{
+    margin-top: 17px;
+    margin-bottom: 30px;
+    width: 200px;
+    border-radius: 90px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.kotak-1-home .ketik{
+    margin-bottom: -20px;
+}
+
+.kotak-1-home{
+    width: 500px;
+    padding: 10px;
+    margin: 0;
+    float: left;
+    box-shadow: 5px 5px 10px gray;
+    display: table-cell; 
+    margin-right: 20px; 
+    margin-left: 42px;
+    border-radius: 13px;
+    margin-top: 30px;
+}
+
+.kotak-1-home-training{
+    width: 500px;
+    padding: 10px;
+    margin: 0;
+    float: left;
+    box-shadow: 5px 5px 10px gray;
+    display: table-cell; 
+    margin-right: 70px; 
+    margin-left: 42px;
+    border-radius: 13px;
+    margin-top: -179px;
+}
+
+.kotak-2-home{
+    width: 600px;
+    padding: 10px;
+    margin: 0;
+    float: left;
+    display: table-cell; 
+    margin-left: 30px;
+    border-radius: 13px;
+    margin-top: 30px;
+}
+
+.month {
+    padding: 70px 25px;
+    width: 100%;
+    background: -webkit-linear-gradient(#252b6f, #4b2447);   
+    text-align: center;
+    border-radius: 13px;
+  }
+  
+  .month ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  
+  .month .prev {
+    float: left;
+    padding-top: 10px;
+  }
+  
+  .month .next {
+    float: right;
+    padding-top: 10px;
+  }
+  
+  .weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ddd;
+  }
+  
+  .weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+  }
+  
+  .days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+  }
+  
+  .days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color: #777;
+  }
+  
+  .days li .active {
+    padding: 5px;
+    background: -webkit-linear-gradient(#252b6f, #4b2447);    
+    color: white !important
+  }
+  
+  /* Add media queries for smaller screens */
+  @media screen and (max-width:720px) {
+    .weekdays li, .days li {width: 13.1%;}
+  }
+  
+  @media screen and (max-width: 420px) {
+    .weekdays li, .days li {width: 12.5%;}
+    .days li .active {padding: 2px;}
+  }
+  
+  @media screen and (max-width: 290px) {
+    .weekdays li, .days li {width: 12.2%;}
+  }

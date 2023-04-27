@@ -41,4 +41,8 @@ public class CompetencyLevel {
     @ManyToMany(mappedBy = "levelOfTraining")
     private List<TrainingModel> training;
 
+    @OneToMany(mappedBy = "competencyLevel", fetch = FetchType.LAZY)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    List<AssessmentLevelModel> listAssessment;
+
 }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Competency Assessment</title>
+    <object th:include="fragments/fragment :: requirement" th:remove="tag"></object>
+
+</head>
+
+<body>
+<nav th:replace="fragments/fragment :: navbar"></nav>
+<div class="Test">
+    <h1 class="text">Competency Assessment</h1>
+    <div class="buttons" style="margin-left: 43px;">
+        <h5 th:text="'User: ' + ${usermodel.getUsername()}"></h5>
+        <h5 th:if="${eventPeriod}" th:text="${eventPeriod.getPeriodName()}"></h5>
+
+    </div>
+    <div class="container">
+        <div class="card m-2 p-4">
+            <div th:if="${successtext} " th:replace="fragments/fragment :: alert-success-fragment(successtext=${successtext})"></div>
+            <div th:if="${errortext} " th:replace="fragments/fragment :: alert-error-fragment(errortext=${errortext})"></div>
+            <div class="card-body">
+                <div class="justify-content-center">
+                    <form th:action="@{/do-assessment/{uuid}(uuid=${assessment.user.accountUuid})}" th:object="${assessment}" method="POST">
+                        <input type="hidden" th:field="*{date}"  th:value="*{date}" />
+                        <input type="hidden" th:field="*{assessor}" th:value="*{assessor}" />
+                        <input type="hidden" th:field="*{user}"  th:value="*{user}"/>
+                        <input type="hidden" th:field="*{event}"  th:value="*{event}"/>
+                        <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="text-center">Competency</th>
+                            <th class="text-center">Level </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr  class="text-center" th:each="assessmentLevel, iterationStatus : ${assessment.getListAssessment()}" th:with="maxLevel=${listMaxLevelCompetency[iterationStatus.index]}">
+                                <td>
+                                    <input type="hidden" th:field="${assessment.listAssessment[__${iterationStatus.index}__].gap}" th:value="${assessment.listAssessment[__${iterationStatus.index}__].gap}" />
+                                    <input type="hidden" th:field="${assessment.listAssessment[__${iterationStatus.index}__].competencyLevel}" th:value="${assessment.listAssessment[__${iterationStatus.index}__].competencyLevel}" />
+                                    <input type="hidden" th:field="${assessment.listAssessment[__${iterationStatus.index}__].assessment}" th:value="${assessment.listAssessment[__${iterationStatus.index}__].assessment}" />
+
+                                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" th:id="'panelsStayOpen-headingOne' + ${iterationStatus.index}">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" th:data-bs-target="'#panelsStayOpen-collapseOne'+${iterationStatus.index}" aria-expanded="false" th:aria-controls="'panelsStayOpen-collapseOne' + ${iterationStatus.index}" th:text="${assessmentLevel.competencyLevel.idCompetency.nama}">
+                                                </button>
+                                            </h2>
+                                            <div th:id="'panelsStayOpen-collapseOne' + ${iterationStatus.index}" class="accordion-collapse collapse" th:aria-labelledby="'panelsStayOpen-headingOne'+${iterationStatus.index}">
+                                                <div class="accordion-body" th:text="${assessmentLevel.competencyLevel.idCompetency.deskripsi}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div th:each="level,iterationj : ${#numbers.sequence(1, maxLevel)}" class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" th:field="${assessment.listAssessment[__${iterationStatus.index}__].result}" th:value="${level}" th:id="'inlineRadio'+${level}+' '+${#ids.seq('radio')}" >
+                                            <label class="form-check-label" th:for="'inlineRadio'+${level}+' '+${#ids.seq('radio')}" th:text="${level}"></label>
+                                        </div>
+                                </td>
+                        </tr>
+
+
+
+                        </tbody>
+                    </table>
+                        <tr>
+                            <button class="btn btn-primary" type="submit" name="save">Submit</button>
+
+                        </tr>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div th:replace="fragments/fragment :: scripts" th:remove="tag"></div>
+
+</body>
+
+</html>

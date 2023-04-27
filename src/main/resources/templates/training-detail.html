@@ -19,7 +19,9 @@
           </div>
           <div th:if="${successtext} " th:replace="fragments/fragment :: alert-success-fragment(successtext=${successtext})"></div>
           <div class="col-2">
-            <a  th:if="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('admin')}" th:href="@{/training-catalog/update/} + ${training.trainingId}"><button class="btn btn-sm btn-primary">Update</button></a>
+            <a  th:if="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('admin')}" th:href="@{/training-catalog/update/} + ${training.trainingId}">
+              <button class="btn btn-sm btn-primary">Update</button>
+            </a>
 <!--            <a class="btn btn-sm btn-danger my-1" data-bs-toggle="modal" th:data-bs-target="'#my-modal-' + ${training.trainingId}">Delete</a>-->
             <!-- Button to trigger the modal -->
             <button  th:if="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('admin')}" type="button" class="btn btn-sm btn-outline-danger my-1" data-bs-toggle="modal" th:data-bs-target="'#my-modal-' + ${training.trainingId}">

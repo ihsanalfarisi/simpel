@@ -14,7 +14,11 @@ import java.util.List;
 @Table(name="user")
 //@DiscriminatorValue("User")
 public class UserModel extends AccountModel{
-//    @OneToMany(mappedBy = "userModel", fetch = FetchType.LAZY)
-//    @OnDelete(action = OnDeleteAction.CASCADE)
-//    List<TrainingTakenUser> listTrainingTakenByUser;
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    List<AssessmentModel> listAssessment;
+
+    @ManyToMany(mappedBy = "userInTrainingPlan")
+    private List<TrainingPlanModel> listTrainingPlanIn;
+
 }
