@@ -47,6 +47,9 @@ public class PageController {
     @Autowired
     AccountService accountService;
 
+    @Autowired
+    TrainingPlanService trainingPlanService;
+
     @GetMapping("/")
     public String homePage(Model model){
         UserModel akunUser = profileService.getUser();        
@@ -69,6 +72,9 @@ public class PageController {
                 }
             }
         }
+        model.addAttribute("Done", trainingPlanService.getJumlahTrainingDone());
+        model.addAttribute("Active", trainingPlanService.getJumlahTrainingActive());
+        model.addAttribute("Confirmed", trainingPlanService.getJumlahTrainingConfirmed());
         return "home";
     }
 

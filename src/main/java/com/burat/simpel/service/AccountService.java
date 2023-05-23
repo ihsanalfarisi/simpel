@@ -14,5 +14,5 @@ public interface AccountService {
 
     boolean doesAccountExistsByUsername(String username);
 
-
+    void logOutAllAccounts();
 }

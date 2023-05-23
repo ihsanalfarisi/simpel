@@ -1,7 +1,9 @@
 package com.burat.simpel.service.implementation;
 
 import com.burat.simpel.model.CompetencyLevel;
+import com.burat.simpel.model.EventPeriodModel;
 import com.burat.simpel.model.TrainingModel;
+import com.burat.simpel.model.TrainingPlanModel;
 import com.burat.simpel.repository.CompetencyLevelDb;
 import com.burat.simpel.repository.TrainingDb;
 import com.burat.simpel.repository.TrainingPlanDb;
@@ -59,4 +61,6 @@ public class TrainingServiceImpl implements TrainingService {
     public List<TrainingModel> getSomeTraining() {
         return trainingDb.findTrainingNotExisting();
     }
+
+
 }

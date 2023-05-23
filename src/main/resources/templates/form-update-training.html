@@ -16,6 +16,8 @@
       <div class="justify-content-center">
         <h2>Update Training</h2>
         <br>
+        <h4 th:text="'Periode assessment: '+${eventPeriod.periodName}"></h4>
+        <br>
         <form th:action="@{/training-catalog/update}" th:object="${training}" method="POST">
           <input type="hidden" th:field="*{trainingId}" />
 
