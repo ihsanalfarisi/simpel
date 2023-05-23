@@ -24,10 +24,11 @@
         <div class="container">
             <div class="card m-4 p-4">
                 <div class="justify-content-center">
-                    <table class="table">
+                    <table class="table table-paginate">
                         <thead>
                             <tr>
-                                <th class="text-center">ID</th>
+                                <th class="text-center">No</th>
+                                <th class="">Nama</th>
                                 <th class="">Training</th>
                                 <th class="">Tanggal Mulai</th>
                                 <th class="">Tanggal Selesai</th>
@@ -36,14 +37,15 @@
                         </thead>
                         <tbody>
                             <tr th:each="trainingPlan, iterationStatus : ${listTrainingPlan}">
-                                <td th:text="${trainingPlan.idTrainingPlan}" class="text-center"></td>
+                                <td th:text="${iterationStatus.count}" class="text-center"></td>
                                 <td>
-                                    <a th:text="${trainingPlan.idTraining.nama}"
+                                    <a th:text="${trainingPlan.nama}"
                                         th:href="@{/training-plan/} + ${trainingPlan.idTrainingPlan}"
                                         style="color: black;"
                                         onpointerenter="this.setAttribute('style', 'color: purple;')"
                                         onpointerleave="this.setAttribute('style', 'color: black;')"></a>
                                 </td>
+                                <td th:text="${trainingPlan.idTraining.nama}"></td>
                                 <td th:text="${#temporals.format(trainingPlan.dateStart, 'dd MMMM yyyy')}"></td>
                                 <td th:text="${#temporals.format(trainingPlan.dateEnd, 'dd MMMM yyyy')}"></td>
                                 <div th:switch="${trainingPlan.status}">

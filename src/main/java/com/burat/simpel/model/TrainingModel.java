@@ -52,8 +52,4 @@ public class TrainingModel {
             uniqueConstraints = @UniqueConstraint(columnNames = {"id_training", "id_level"})
     )
     List<CompetencyLevel> levelOfTraining;
-
-//    @OneToMany(mappedBy = "trainingModel", fetch = FetchType.LAZY)
-//    @OnDelete(action = OnDeleteAction.CASCADE)
-//    List<TrainingTakenUser> listUserTakenThisTraining;
 }

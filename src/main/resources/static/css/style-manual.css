@@ -1,35 +1,37 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     position: relative;
     min-height: 100vh;
     width: 100%;
 }
 
-nav{
+/* nav{
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     width: 78px;
-    background: linear-gradient(180deg, rgba(37,43,111,1) 30%, rgba(75,36,71,0.79) 100%);    padding: 6px 14px;
+    background: linear-gradient(180deg, rgba(37, 43, 111, 1) 30%, rgba(75, 36, 71, 0.79) 100%);
+    padding: 6px 14px;
     transition: all 0.5s ease;
     border-radius: 0px 30px 0px 0px;
     z-index: 8;
 }
 
-nav.active{
+nav.active {
     width: 240px;
 }
 
-nav .logo_content{
+nav .logo_content {
     margin-top: 30px;
 }
-nav .logo_content .logo{
+
+nav .logo_content .logo {
     color: #fff;
     display: flex;
     height: 50px;
@@ -40,21 +42,22 @@ nav .logo_content .logo{
     opacity: 0;
     pointer-events: none;
 }
-nav .logo_content .logo .logo_name{
+
+nav .logo_content .logo .logo_name {
     margin-left: 15%;
 }
 
 nav.active .logo_content .logo{
 opacity: 1;
 pointer-events: none;
-}
+} */
 
 /* .logo_content .logo .logo_name{
     font-size: 20px;
     font-weight: 400;
 } */
 
-nav #btn{
+/* nav #btn{
     position: absolute;
     color: #fff;
     left: 50%;
@@ -67,15 +70,16 @@ nav #btn{
     transform: translateX(-50%);
 }
 
-nav.active #btn{
-left: 25%;
+nav.active #btn {
+    left: 25%;
 }
 
-nav ul{
+nav ul {
     margin-top: 20px;
     margin-left: -35px;
 }
-nav ul li{
+
+nav ul li {
     list-style: none;
     position: relative;
     height: 50px;
@@ -84,11 +88,11 @@ nav ul li{
     line-height: 50px;
 }
 
-nav ul li .tooltip{
+nav ul li .tooltip {
     position: absolute;
     left: 122px;
     top: 0;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
     border-radius: 6px;
     height: 35px;
     width: 122px;
@@ -101,20 +105,21 @@ nav ul li .tooltip{
     display: block;
 }
 
-nav.active ul li .tooltip{
+nav.active ul li .tooltip {
     display: none;
 }
-nav ul li:hover .tooltip{
+
+nav ul li:hover .tooltip {
     transition: all 0.5s ease;
     opacity: 1;
     top: 50%;
 }
 
-nav ul li .tooltip-2{
+nav ul li .tooltip-2 {
     position: absolute;
     left: 122px;
     top: 3;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
     border-radius: 6px;
     height: 50px;
     width: 122px;
@@ -128,17 +133,17 @@ nav ul li .tooltip-2{
     line-height: 1.4;
 }
 
-nav.active ul li .tooltip-2{
+nav.active ul li .tooltip-2 {
     display: none;
 }
 
-nav ul li:hover .tooltip-2{
+nav ul li:hover .tooltip-2 {
     transition: all 0.5s ease;
     opacity: 1;
     top: 50%;
 }
 
-nav ul li a{
+nav ul li a {
     color: #fff;
     display: flex;
     align-items: center;
@@ -148,12 +153,12 @@ nav ul li a{
     white-space: nowrap;
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
     background: #fff;
     color: #11101d;
 }
 
-nav .log-out a{
+nav .log-out a {
     color: #fff;
     display: flex;
     align-items: center;
@@ -164,50 +169,50 @@ nav .log-out a{
     line-height: 30px;
 }
 
-nav .log-out a:hover{
+nav .log-out a:hover {
     background: #fff;
     color: #11101d;
 }
 
 
-nav ul li a i{
+nav ul li a i {
     /* height: 50px; */
-    min-width: 50px;
+    /* min-width: 50px;
     border-radius: 12px;
     line-height: 100px;
     text-align: center;
     margin-right: -10px;
-}
+} */
 
-
+/* 
 nav .links_name{
     opacity: 0;
     pointer-events: none;
 }
 
-nav.active .links_name{
+nav.active .links_name {
     opacity: 1;
     pointer-events: auto;
 }
 
-nav .log-out .links_name{
+nav .log-out .links_name {
     opacity: 0;
     pointer-events: none;
     margin-left: 15px;
 }
 
-nav.active .log-out .links_name{
+nav.active .log-out .links_name {
     opacity: 1;
     pointer-events: auto;
 }
 
-nav .logout{
+nav .logout {
     margin-top: 441px;
 }
 
-nav .logout-2{
+nav .logout-2 {
     margin-bottom: 490px;
-}
+} */
 
 /* nav #log-out{
     bottom: 5px;
@@ -217,50 +222,51 @@ nav .logout-2{
 } */
 
 .Test{
-    position: absolute;
-    width: calc(100% - 78px);
-    height: 100%;
-    left: 78px;
+    position: relative;
+    width: calc(100% - 260px);
+    height: 100vh;
+    left: 260px;
     transition: all 0.5s ease;
 }
 
-.Test .add-training{
+.Test .add-training {
     margin-left: 25px;
 }
 
-.Test .add-competency{
+.Test .add-competency {
     margin-left: 25px;
 }
 
-.Test .text{
+.Test .text {
     margin-left: 40px;
     margin-top: 3%;
     font-weight: 520;
     font-size: 65px;
 }
 
-.Test .text-training{
-    margin-left: 209px;
-    margin-top: 5%;
+.Test .text-training {
+    margin-left: 130px;
+    margin-top: -20px;
     font-weight: 400;
-    font-size: 80px;
+    font-size: 50px;
 }
 
-h1{
+h1 {
     background: -webkit-linear-gradient(#252b6f, #4b2447);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;}
-
-nav.active ~ .Test{
-    width: calc(100% - 240px);
-    left: 240px;
+    -webkit-text-fill-color: transparent;
 }
 
-.Test .tombol{
+/* nav.active ~ .Test{
+    width: calc(100% - 240px);
+    left: 240px;
+} */
+
+.Test .tombol {
     margin-left: 3%;
 }
 
-.Test .container{
+.Test .container {
     margin-left: 10px;
 }
 
@@ -271,14 +277,18 @@ nav.active ~ .Test{
     color: #fff;
     margin: 8px;
     height: 40px;
-    text-align:center;
+    text-align: center;
     background-size: 200% 100%;
     border: #4C38BE;
     border-radius: 50px;
 }
 
 .btn-hover.color-1 {
-    background-image: linear-gradient(180deg, rgba(37,43,111,1) 30%, rgba(75,36,71,0.79) 100%);
+    background-image: linear-gradient(180deg, rgba(37, 43, 111, 1) 30%, rgba(75, 36, 71, 0.79) 100%);
+}
+
+.btn-hover.color-2 {
+    background-image: linear-gradient(180deg, #263A29 30%, #263A29 100%);
 }
 
 .btn-hover-2 {
@@ -288,14 +298,18 @@ nav.active ~ .Test{
     color: #fff;
     margin: 8px;
     height: 40px;
-    text-align:center;
+    text-align: center;
     background-size: 200% 100%;
     border: #4C38BE;
     border-radius: 10px;
 }
 
 .btn-hover-2.color-1 {
-    background-image: linear-gradient(180deg, rgba(37,43,111,1) 30%, rgba(75,36,71,0.79) 100%);
+    background-image: linear-gradient(180deg, rgba(37, 43, 111, 1) 30%, rgba(75, 36, 71, 0.79) 100%);
+}
+
+.btn-hover-2.color-2 {
+    background-image: linear-gradient(180deg, #609966 30%, #9DC08B 100%);
 }
 
 .btn-hover.color-2 {
@@ -303,21 +317,21 @@ nav.active ~ .Test{
 
 }
 
-.float{
-	position:fixed;
-	width:80px;
-	height:80px;
-	bottom:40px;
-	right:40px;
-	background:linear-gradient(180deg, rgba(37,43,111,1) 30%, rgba(75,36,71,0.79) 100%);
-	color:#FFF;
-	border-radius:50px;
-	text-align:center;
-	box-shadow: 2px 2px 3px #999;
+.float {
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    bottom: 40px;
+    right: 40px;
+    background: linear-gradient(180deg, rgba(37, 43, 111, 1) 30%, rgba(75, 36, 71, 0.79) 100%);
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
 }
 
-.my-float{
-	margin-top:16px;
+.my-float {
+    margin-top: 16px;
 }
 
 a:link {
@@ -329,7 +343,7 @@ a:link {
     color: #4C38BE;
 } */
 
-.tombol-add a{
+.tombol-add a {
     color: #FFF;
 }
 
@@ -349,7 +363,7 @@ a:link {
 .status1 {
     padding: 1px 10px;
     color: #D38345;
-    background-color: #FFDACA; 
+    background-color: #FFDACA;
     margin-left: 0;
     margin-right: 0;
     margin-top: 1px;
@@ -385,19 +399,19 @@ a:link {
     text-align: center;
 }
 
-.kotak-1{
+.kotak-1 {
     width: 500px;
     padding: 10px;
     margin: 0;
     float: left;
     box-shadow: 5px 5px 10px gray;
-    display: table-cell; 
-    margin-right: 50px; 
+    display: table-cell;
+    margin-right: 50px;
     margin-left: 42px;
     border-radius: 13px;
 }
 
-.kotak-2{
+.kotak-2 {
     width: 600px;
     padding: 10px;
     margin: 0;
@@ -405,31 +419,32 @@ a:link {
     border-radius: 13px;
 }
 
-h4{
+h4 {
     background: -webkit-linear-gradient(#252b6f, #4b2447);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.kotak-1 p{
+.kotak-1 p {
     font-size: 20px;
     font-weight: 400;
 }
 
-.kotak-2 p{
+.kotak-2 p {
     font-size: 20px;
     font-weight: 400;
 }
 
-.Test .isi{
+.Test .isi {
     margin-left: 20px;
     margin-top: 20px;
 }
 
-.Test .bagian{
+.Test .bagian {
     margin-top: 20px;
 }
-.kotak-1 img{
+
+.kotak-1 img {
     margin-top: 17px;
     margin-bottom: 30px;
     width: 200px;
@@ -439,122 +454,381 @@ h4{
     margin-right: auto;
 }
 
-.kotak-1-home .ketik{
+.kotak-1-home .ketik {
     margin-bottom: -20px;
 }
 
-.kotak-1-home{
+.kotak-1-home {
     width: 500px;
     padding: 10px;
     margin: 0;
     float: left;
     box-shadow: 5px 5px 10px gray;
-    display: table-cell; 
-    margin-right: 20px; 
+    display: table-cell;
+    margin-right: 20px;
     margin-left: 42px;
     border-radius: 13px;
     margin-top: 30px;
 }
 
-.kotak-1-home-training{
-    width: 500px;
+.kotak-1-home-training {
+    width: 316px;
     padding: 10px;
     margin: 0;
     float: left;
     box-shadow: 5px 5px 10px gray;
-    display: table-cell; 
-    margin-right: 70px; 
-    margin-left: 42px;
+    display: table-cell;
+    margin-right: 9px;
+    margin-left: 21px;
     border-radius: 13px;
-    margin-top: -179px;
+    margin-top: 36px;
+    height: 140px;
 }
 
-.kotak-2-home{
+.kotak-2-home {
     width: 600px;
     padding: 10px;
     margin: 0;
     float: left;
     display: table-cell; 
-    margin-left: 30px;
+    margin-left: 1px;
     border-radius: 13px;
     margin-top: 30px;
+    transition: all 0.5s ease;
 }
 
-.month {
-    padding: 70px 25px;
+nav.close ~ .kotak-2-home{
+    margin-left: 30px;
+}
+
+  nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 260px;
+    background: linear-gradient(180deg, rgba(37,43,111,1) 30%, rgba(75,36,71,0.79) 100%);
+    z-index: 100;
+    border-radius: 0px 30px 0px 0px;
+    transition: all 0.5s ease;
+  }
+  nav.close{
+    width: 78px;
+  }
+  
+  nav .logo-details{
+    height: 60px;
     width: 100%;
-    background: -webkit-linear-gradient(#252b6f, #4b2447);   
+    display: flex;
+    align-items: center;
+  }
+  
+  nav .logo-details .gambar{
+    padding-top: 50px;
+    padding-left: 18px;
+  }
+  
+  nav .logo-details img{
+    height: 50px;
+  }
+  nav .logo-details i{
+    font-size: 35px;
+    color: #fff;
+    height: 50px;
+    min-width: 78px;
     text-align: center;
-    border-radius: 13px;
+    line-height: 50px;
   }
-  
-  .month ul {
-    margin: 0;
-    padding: 0;
+  nav .logo-details .logo_name{
+    font-size: 40px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s ease;
+    transition-delay: 0.1s;
+    padding-top: 45px;
+    padding-left: 20px;
   }
-  
-  .month ul li {
-    color: white;
+  nav.close .logo-details .logo_name{
+    transition-delay: 0s;
+    opacity: 0;
+    pointer-events: none;
+  }
+  nav .nav_links{
+    height: 100%;
+    padding: 30px 0 150px 0;
+    overflow: auto;
+  }
+  nav.close .nav_links{
+    overflow: visible;
+  }
+  nav .nav_links::-webkit-scrollbar{
+    display: none;
+  }
+  nav .nav_links li{
+    position: relative;
+    list-style: none;
+    transition: all 0.4s ease;
+  }
+  nav .nav_links li:hover{
+    background: #333056;
+  }
+  nav .nav_links li .iocn-link{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav.close .nav_links li .iocn-link{
+    display: block
+  }
+  nav .nav_links li i{
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
     font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  nav .nav_links li.showMenu i.arrow{
+    transform: rotate(-180deg);
+  }
+  nav.close .nav_links i.arrow{
+    display: none;
+  }
+  nav .nav_links li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  nav .nav_links li a .link_name{
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    transition: all 0.4s ease;
+  }
+  nav.close .nav_links li a .link_name{
+    opacity: 0;
+    pointer-events: none;
+  }
+  nav .nav_links li .sub-menu{
+    padding: 6px 6px 14px 80px;
+    margin-top: -10px;
+    background: #333056;
+    display: none;
+  }
+  nav .nav_links li.showMenu .sub-menu{
+    display: block;
+  }
+  nav .nav_links li .sub-menu a{
+    color: #fff;
+    font-size: 15px;
+    padding: 5px 0;
+    white-space: nowrap;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
+  nav .nav_links li .sub-menu a:hover{
+    opacity: 1;
+  }
+  nav.close .nav_links li .sub-menu{
+    position: absolute;
+    left: 100%;
+    top: -10px;
+    margin-top: 0;
+    padding: 10px 20px;
+    border-radius: 0 6px 6px 0;
+    opacity: 0;
+    display: block;
+    pointer-events: none;
+    transition: 0s;
+  }
+  nav.close .nav_links li:hover .sub-menu{
+    top: 0;
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.4s ease;
+  }
+  nav .nav_links li .sub-menu .link_name{
+    display: none;
+  }
+  nav.close .nav_links li .sub-menu .link_name{
+    font-size: 18px;
+    opacity: 1;
+    display: block;
+  }
+  nav .nav_links li .sub-menu.blank{
+    opacity: 1;
+    pointer-events: auto;
+    padding: 3px 20px 6px 16px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  nav .nav_links li:hover .sub-menu.blank{
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  nav .profile-details{
+    position: fixed;
+    bottom: 0;
+    width: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #333056;
+    padding: 12px 0;
+    transition: all 0.5s ease;
   }
   
-  .month .prev {
-    float: left;
-    padding-top: 10px;
+  nav .profile-details .name-job{
+    padding-right: 99px;
+  }
+  nav.close .profile-details{
+    background: none;
+  }
+  nav.close .profile-details{
+    width: 78px;
   }
   
-  .month .next {
-    float: right;
-    padding-top: 10px;
+  nav .profile-details .profile_name,
+  nav .profile-details .job{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    white-space: nowrap;
   }
   
-  .weekdays {
-    margin: 0;
-    padding: 10px 0;
-    background-color: #ddd;
+  nav.close .profile-details .profile_name,
+  nav.close .profile-details .job{
+    display: none;
   }
-  
-  .weekdays li {
-    display: inline-block;
-    width: 13.6%;
-    color: #666;
-    text-align: center;
+  nav .profile-details .job{
+    font-size: 12px;
   }
-  
-  .days {
-    padding: 10px 0;
-    background: #eee;
-    margin: 0;
-  }
-  
-  .days li {
-    list-style-type: none;
-    display: inline-block;
-    width: 13.6%;
-    text-align: center;
-    margin-bottom: 5px;
-    font-size:12px;
-    color: #777;
-  }
-  
-  .days li .active {
-    padding: 5px;
-    background: -webkit-linear-gradient(#252b6f, #4b2447);    
-    color: white !important
-  }
-  
-  /* Add media queries for smaller screens */
-  @media screen and (max-width:720px) {
-    .weekdays li, .days li {width: 13.1%;}
-  }
-  
-  @media screen and (max-width: 420px) {
-    .weekdays li, .days li {width: 12.5%;}
-    .days li .active {padding: 2px;}
-  }
-  
-  @media screen and (max-width: 290px) {
-    .weekdays li, .days li {width: 12.2%;}
-  }
+
+nav.close ~ .Test{
+    left: 75px;
+    width: calc(100% - 78px);
+}
+
+@media (max-width: 400px) {
+nav.close .nav_links li .sub-menu{
+    display: none;
+}
+nav{
+    width: 78px;
+}
+nav.close{
+    width: 0;
+}
+.Test{
+    left: 78px;
+    width: calc(100% - 78px);
+    z-index: 100;
+}
+nav.close ~ .Test{
+    width: 100%;
+    left: 0;
+}
+}
+
+.wrapper{
+  width: 450px;
+  border-radius: 10px;
+    box-shadow: 5px 5px 10px gray;
+}
+.wrapper header{
+  display: flex;
+  align-items: center;
+  padding: 25px 30px 10px;
+  justify-content: space-between;
+}
+header .icons{
+  display: flex;
+}
+header .icons span{
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  color: #878787;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.9rem;
+  user-select: none;
+  border-radius: 50%;
+}
+.icons span:last-child{
+  margin-right: -10px;
+}
+header .icons span:hover{
+  background: #f2f2f2;
+}
+header .current-date{
+  font-size: 1.20rem;
+  font-weight: 500;
+}
+.calendar{
+  padding: 8px;
+}
+.calendar ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+  margin-left: -25px;
+}
+
+.calendar .days{
+  margin-bottom: 12px;
+  margin-top: -24px;
+  margin-left: -25px;
+}
+.calendar li{
+  color: #333;
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
+.calendar .weeks li{
+  font-weight: 500;
+  cursor: default;
+}
+.calendar .days li{
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+}
+.days li.inactive{
+  color: #aaa;
+}
+.days li.active{
+  color: #fff;
+}
+.days li::before{
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.days li.active::before{
+    background: -webkit-linear-gradient(#252b6f, #4b2447);
+}
+.days li:not(.active):hover::before{
+  background: #f2f2f2;
+}
+
+.Test .isi-home{
+    margin-top: -1px;
+    margin-left: 6px;
+    transition: all 0.3s ease;
+}
+
+nav.close ~ .Test .isi-home{
+    margin-left: 110px;
+}

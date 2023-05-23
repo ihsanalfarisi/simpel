@@ -48,7 +48,7 @@
                    onpointerenter="this.setAttribute('style', 'color: purple;')"
                    onpointerleave="this.setAttribute('style', 'color: black;')" ></a>
               </td>
-              <td class="text-center" th:text="${event.dateStart}"></td>
+              <td class="text-center" th:text="${#temporals.format(event.dateStart, 'dd MMMM yyyy')}"></td>
             </tr>
             </tbody>
           </table>

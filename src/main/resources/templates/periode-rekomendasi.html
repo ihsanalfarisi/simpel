@@ -16,7 +16,7 @@
     <div class="card m-4 p-4">
       <div class="card-body">
         <div class="justify-content-center">
-          <table class="table">
+          <table class="table table-paginate">
             <thead>
             <tr>
               <th class="text-center">No</th>
@@ -34,7 +34,7 @@
                    onpointerenter="this.setAttribute('style', 'color: purple;')"
                    onpointerleave="this.setAttribute('style', 'color: black;')" ></a>
               </td>
-              <td th:text="${event.dateStart}" class="text-center"></td>
+              <td class="text-center" th:text="${#temporals.format(event.dateStart, 'dd MMMM yyyy')}"></td>
             </tr>
             </tbody>
           </table>

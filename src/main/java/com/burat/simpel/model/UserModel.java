@@ -18,7 +18,7 @@ public class UserModel extends AccountModel{
     @OnDelete(action = OnDeleteAction.CASCADE)
     List<AssessmentModel> listAssessment;
 
-    @ManyToMany(mappedBy = "userInTrainingPlan")
-    private List<TrainingPlanModel> listTrainingPlanIn;
+    // @OneToMany(mappedBy = "userModel", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    // private List<TrainingPlanTakenByUserModel> listTrainingPlanIn;
 
 }

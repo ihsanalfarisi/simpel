@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -22,19 +22,31 @@
                         <div th:if="${successtext}"
                             th:replace="fragments/fragment :: alert-success-fragment(successtext=${successtext})">
                         </div>
+                        <div th:if="${errortext}" th:replace="fragments/fragment :: alert-error-fragment(errortext=${errortext})"></div>
+
                         <div class="col-2">
-                            <a th:if="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('admin')}">
-                                <a th:if="${status == 0 || status == 1}" th:href="@{/training-plan/update/} + ${idTrainingPlan}">
-                                    <button class="btn btn-sm btn-primary">Update</button>
+                            <div th:if="${activeTrainingPeriod}">
+                                <a th:if="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('admin')}">
+                                    <a th:if="${status == 0 || status == 1}" th:href="@{/training-plan/update/} + ${idTrainingPlan}">
+                                        <button class="btn btn-sm btn-primary">Update</button>
+                                    </a>
+                                    <a th:unless="${status != 0}"></a>
                                 </a>
-                                <a th:unless="${status != 0}"></a>
+                                <a th:if="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('admin')}">
+                                    <a th:if="${status == 2 || status == 3}" th:href="@{/training-plan/} + ${idTrainingPlan} + '/absensi'">
+                                        <button class="btn btn-sm btn-primary">Absensi</button>
+                                    </a>
+                                    <a th:unless="${status != 0}"></a>
                                 </a>
-                            <button
-                                th:if="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('admin')}"
-                                type="button" class="btn btn-sm btn-outline-danger my-1" data-bs-toggle="modal"
-                                th:data-bs-target="'#my-modal-' + ${idTrainingPlan}">
-                                Delete
-                            </button>
+
+                                <button
+                                    th:if="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('admin')}"
+                                    type="button" class="btn btn-sm btn-outline-danger my-1" data-bs-toggle="modal"
+                                    th:data-bs-target="'#my-modal-' + ${idTrainingPlan}">
+                                    Delete
+                                </button>
+                            </div>
+
 
                             <!-- Modal -->
                             <div class="modal fade" th:id="'my-modal-' + ${idTrainingPlan}" tabindex="-1"
@@ -45,14 +57,12 @@
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLabel"
                                                 th:text="'Hapus Training Plan?'"></h5>
-                                                th:text="'Hapus Training Plan?'"></h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
 
                                         <!-- Modal Body -->
                                         <div class="modal-body">
-                                            <p th:text="'Apakah Anda yakin ingin menghapus Training Plan berikut?'">
                                             <p th:text="'Apakah Anda yakin ingin menghapus Training Plan berikut?'">
                                             </p>
                                             <p>Anda tidak dapat mengembalikan data ini.</p>
@@ -73,6 +83,10 @@
                     </div>
                     <br>
                     <div class="row">
+                        <div class="col-2" style="font-weight: bold">Nama</div>
+                        <div class="col-10" th:text="${nama}"></div>
+                    </div>
+                    <div class="row">
                         <div class="col-2" style="font-weight: bold">Deskripsi</div>
                         <div class="col-10" th:text="${deskripsi}"></div>
                     </div>
@@ -90,6 +104,10 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-2" style="font-weight: bold">Event Period</div>
+                        <div class="col-10" th:text="${eventPeriod.periodName}"></div>
+                    </div>
+                    <div class="row">
                         <div class="col-2" style="font-weight: bold">Status</div>
                         <div class="col-10" th:switch="${status}">
                             <td th:case="1"><p class="status1">Confirmed</p></td>
@@ -102,10 +120,29 @@
                     <hr>
                     <h6 style="font-weight: bold">Berikut merupakan user-user yang akan melakukan training:</h6>
                     <table class="table table-hover">
+                        <thead>
+                            <th class="text-center">No</th>
+                            <th class="">Username</th>
+                            <th class="">Nama</th>
+                            <th class="">Kehadiran</th>
+                        </thead>
                         <tbody>
                             <tr th:each="userTrainingPlan, iterationStatus : ${listUserTrainingPlan}">
-                                <td th:text="${userTrainingPlan.namaDepan} + ' ' + ${userTrainingPlan.namaBelakang}">
-                                </td>
+                                <td th:text="${iterationStatus.count}" class="text-center"></td>
+                                <td th:text="${userTrainingPlan.userModel.username}"></td>
+                                <td th:text="${userTrainingPlan.userModel.namaDepan} + ' ' + ${userTrainingPlan.userModel.namaBelakang}"></td>
+                                <div th:if=="${userTrainingPlan.trainingPlan.status==3}">
+                                    <div th:switch="${userTrainingPlan.status}">
+                                        <td th:case="absen"><p class="status1">Absen</p></td>
+                                        <td th:case="izin"><p class="status2">Izin</p></td>
+                                        <td th:case="hadir"><p class="status3">Hadir</p></td>
+                                        <!-- * for default case -->
+                                        <td th:case="*"><p class="status0">-</p></td>
+                                    </div>
+                                </div>
+                                <div th:unless=="${userTrainingPlan.trainingPlan.status==3}">
+                                    <td>-</td>
+                                </div>
                             </tr>
                         </tbody>
                     </table>
@@ -113,7 +150,7 @@
                     <a th:href="@{/training-plan}">
                         <button class="btn-hover-2 color-1">Kembali</button> 
                     </a>
-                    <div style="display: flex; position: relative;">
+                    <div style="display: flex; position: relative;" th:if="${activeTrainingPeriod}">
                         <form
                             th:if="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('admin') || #authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('executive')}"
                             method="post" th:object="${trainingPlanModel}"

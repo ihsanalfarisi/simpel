@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <title>Training Catalog</title>
   <object th:include="fragments/fragment :: requirement" th:remove="tag"></object>
-
 </head>
 
 <body>
@@ -18,8 +17,9 @@
         <div class="card-body">
           <div th:if="${successtext} " th:replace="fragments/fragment :: alert-success-fragment(successtext=${successtext})"></div>
           <div class="justify-content-center">
-            <table class="table">
-              <thead>
+  <!-- <input class="form-control" id="myInput" type="text" placeholder="Search.."> -->
+  <table class="table table-paginate" cellspacing="0" width="100%">
+    <thead>
               <tr>
                 <th class="text-center">No</th>
                 <th class="text-center">Nama</th>
@@ -27,7 +27,7 @@
                 <th class="text-center">Deskripsi</th>
               </tr>
               </thead>
-              <tbody>
+              <tbody id="myTable">
               <tr th:each="training, iterationStatus : ${listTraining}">
                 <td th:text="${iterationStatus.count}" class="text-center"></td>
                 <td>

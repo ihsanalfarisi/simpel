@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import com.burat.simpel.model.EventPeriodModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +23,32 @@ public class TrainingPlanServiceImpl implements TrainingPlanService {
 
     @Override
     public List<TrainingPlanModel> getAllTrainingPlan() {
-        return trainingPlanDb.findAll();
+        List<TrainingPlanModel> listTrainingPlan = trainingPlanDb.findAllSort();
+        List<TrainingPlanModel> listTrainingPlan2 = trainingPlanDb.findAllSortDone();
+        listTrainingPlan.addAll(listTrainingPlan2);
+
+        return listTrainingPlan;
+    }
+
+    @Override
+    public int getJumlahTrainingDone() {
+        List<TrainingPlanModel> listTrainingPlan = trainingPlanDb.findAllSortDone();
+
+        return listTrainingPlan.size();
+    }
+
+    @Override
+    public int getJumlahTrainingActive() {
+        List<TrainingPlanModel> listTrainingPlan  = trainingPlanDb.findAllSortActive();
+
+        return listTrainingPlan.size();
+    }
+
+    @Override
+    public int getJumlahTrainingConfirmed() {
+        List<TrainingPlanModel> listTrainingPlan  = trainingPlanDb.findAllSortConfirmed();
+
+        return listTrainingPlan.size();
     }
 
     @Override
@@ -42,5 +68,13 @@ public class TrainingPlanServiceImpl implements TrainingPlanService {
     @Override
     public void deleteTrainingPlan(TrainingPlanModel trainingPlanModel) {
         trainingPlanDb.delete(trainingPlanModel);
+    }
+
+
+    @Override
+    public boolean TrainingDateValidationCheckWithEvent(TrainingPlanModel trainingPlanModel, EventPeriodModel eventPeriodModel){
+        boolean dateStartValid = trainingPlanModel.getDateStart().isAfter(eventPeriodModel.getDateStart()) && trainingPlanModel.getDateEnd().isBefore(eventPeriodModel.getDateEnd());
+        boolean dateEndValid = trainingPlanModel.getDateStart().isAfter(eventPeriodModel.getDateStart()) && trainingPlanModel.getDateEnd().isBefore(eventPeriodModel.getDateEnd());
+        return dateStartValid && dateEndValid;
     }
 }

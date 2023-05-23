@@ -9,7 +9,7 @@
 </head>
 <body>
 <nav th:replace="fragments/fragment :: navbar"></nav>
-<div class="container Test">
+<div class="container">
   <div class="card m-4 p-4">
     <div class="card-body">
       <div class="justify-content-center">
@@ -22,12 +22,13 @@
             <a  th:if="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('admin')}" th:href="@{/training-catalog/update/} + ${training.trainingId}">
               <button class="btn btn-sm btn-primary">Update</button>
             </a>
+            
 <!--            <a class="btn btn-sm btn-danger my-1" data-bs-toggle="modal" th:data-bs-target="'#my-modal-' + ${training.trainingId}">Delete</a>-->
             <!-- Button to trigger the modal -->
             <button  th:if="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('admin')}" type="button" class="btn btn-sm btn-outline-danger my-1" data-bs-toggle="modal" th:data-bs-target="'#my-modal-' + ${training.trainingId}">
               Delete
             </button>
-
+            
             <!-- Modal -->
             <div class="modal fade" th:id="'my-modal-' + ${training.trainingId}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog">
@@ -57,6 +58,7 @@
           </div>
         </div>
         <br>
+        
         <div class="row">
           <div class="col-2" style="font-weight: bold">Penyedia</div>
           <div class="col-10" th:text="${training.penyedia}"></div>
@@ -87,6 +89,7 @@
         </table>
         <br>
         <a th:href="@{/training-catalog}"><button class="btn-hover-2 color-1">Kembali</button> </a>
+        <a th:href="@{/view-review/} + ${training.trainingId}"><button class="btn-hover-2 color-2">Lihat Review</button></a>
       </div>
     </div>
   </div>

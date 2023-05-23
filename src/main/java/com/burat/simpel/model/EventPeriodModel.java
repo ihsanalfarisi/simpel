@@ -9,6 +9,7 @@ import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
@@ -19,6 +20,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Transactional
 @Table(name = "event_period")
 public class EventPeriodModel {
     @Id
@@ -45,12 +47,9 @@ public class EventPeriodModel {
     @Column(name = "deskripsi")
     private String deskripsi;
 
-    @Size(max = 50)
-    @Column(name = "status")
-    // Planned,
-    // Active,
-    // Done
-    private String status;
+    @NotNull
+    @Column(name = "is_active")
+    private Boolean isActive;
 
     @OneToMany(mappedBy = "event", fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)

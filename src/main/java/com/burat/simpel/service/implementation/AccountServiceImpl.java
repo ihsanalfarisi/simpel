@@ -4,14 +4,23 @@ import com.burat.simpel.model.*;
 import com.burat.simpel.service.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.session.SessionInformation;
+import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.security.Principal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class AccountServiceImpl implements AccountService {
     @Autowired
     AdminService adminService;
 
+    @Autowired
+    SessionRegistry sessionRegistry;
     @Autowired
     ExecutiveService executiveService;
 
@@ -107,5 +116,18 @@ public class AccountServiceImpl implements AccountService {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String hashedPassword = passwordEncoder.encode(rawpassword);
         return hashedPassword;
+    }
+
+    @Override
+    public void logOutAllAccounts() {
+        List<SessionInformation> activeSessions = new ArrayList<SessionInformation>();
+        for (Object principal : sessionRegistry.getAllPrincipals()) {
+//            System.out.println("Test");
+            for (SessionInformation session : sessionRegistry.getAllSessions(principal, true)) {
+                System.out.println(activeSessions);
+                activeSessions.add(session);
+            }
+        }
+
     }
 }

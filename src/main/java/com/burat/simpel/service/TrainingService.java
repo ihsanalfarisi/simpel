@@ -1,7 +1,9 @@
 package com.burat.simpel.service;
 
 import com.burat.simpel.model.CompetencyLevel;
+import com.burat.simpel.model.EventPeriodModel;
 import com.burat.simpel.model.TrainingModel;
+import com.burat.simpel.model.TrainingPlanModel;
 
 import java.util.List;
 
