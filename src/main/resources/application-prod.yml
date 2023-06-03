@@ -7,10 +7,10 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
     # sesuaikan nama database anda dengan di bawah ini
-    url: jdbc:mysql://root:qqZ8IlykalNZ1w4syRM4@containers-us-west-26.railway.app:7631/railway
+    url: jdbc:mysql://root:2JppZIYCc5qgLNuXERrj@containers-us-west-25.railway.app:6545/railway
     # sesuaikan dengan NAMA dan PASSWORD anda dengan username password di bawah ini
     username: root
-    password: qqZ8IlykalNZ1w4syRM4
+    password: 2JppZIYCc5qgLNuXERrj
 
   jpa:
     properties:
