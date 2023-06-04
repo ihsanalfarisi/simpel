@@ -30,6 +30,16 @@
                                     th:object="${modelAkun}">
                                     <table class="table">
                                         <tbody>
+                                        <tr>
+                                            <td>
+                                                <h5>UUID</h5>
+                                            </td>
+                                            <td>
+                                                <p th:text="${modelAkun.getAccountUuid()}"></p>
+                                                <p th:text="'*UUID tidak dapat diubah secara manual'"></p>
+
+                                            </td>
+                                        </tr>
                                             <tr>
                                                 <td>
                                                     <h5>Username</h5>
@@ -102,16 +112,7 @@
                                                         required><!--                                    <p th:text="${modelAkun.getNoTelepon()}"></p>-->
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>
-                                                    <h5>UUID</h5>
-                                                </td>
-                                                <td>
-                                                    <input required readonly class="form-control" type="text"
-                                                        th:value="*{accountUuid}" th:field="*{accountUuid}" />
-                                                    <!--                                    <p th:text="${modelAkun.getAccountUuid()}"></p>-->
-                                                </td>
-                                            </tr>
+
                                             <tr>
                                                 <td>
                                                     <h5>Jenis Kelamin</h5>
@@ -183,13 +184,14 @@
                                         </tbody>
                                     </table>
                                     <input th:value="${modelAkun.getUsername()}" type="hidden" name="currentUsername">
-                                    <a th:href="@{/account-management/edit/{uuid}(uuid=${modelAkun.accountUuid})}"
-                                        style="text-decoration:none"><button class="btn-hover color-2"
-                                            type="button">Batalkan Perubahan</button></a>
+
                                     <button th:value="${modelAkun.getRole()}" class="btn-hover color-1" type="submit"
                                         name="currentRole">Simpan Perubahan</button>
                                     <!--                                    <input type="submit" style="text-decoration:none" class="btn-hover color-1" name="currentRow" value="Simpan Perubahan">-->
                                 </form>
+                                <a th:href="@{/account-management}">
+                                    <button class="btn-hover-2 color-1">Kembali</button>
+                                </a>
                             </div>
                         </div>
                     </div>

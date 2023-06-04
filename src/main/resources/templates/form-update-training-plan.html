@@ -21,9 +21,14 @@
                             <input type="hidden" th:field="*{idTrainingPlan}" th:value="*{idTrainingPlan}" />
                             <input type="hidden" th:field="*{status}" th:value="*{status}" />
 
-                            Training: <br>
+                            Training <br>
                             <input class="form-control" type="text" th:value="*{idTraining.nama}" disabled />
                             <input type="hidden" th:field="*{idTraining.trainingId}" />
+                            <br>
+
+                            Event <br>
+                            <input class="form-control" type="text" th:value="*{eventPeriodModel.periodName}" disabled />
+                            <input type="hidden" th:field="*{eventPeriodModel}" th:value="*{eventPeriodModel}" />
                             <br>
 
                             Nama: <br>

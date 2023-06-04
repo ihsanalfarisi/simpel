@@ -553,10 +553,10 @@ INSERT IGNORE INTO title_comp (id_model, id_level) VALUES
 	('16', '285');
 
 INSERT IGNORE INTO `event_period` (`id_event_period`, `date_end`, `date_start`, `deskripsi`, `period_name`,`jenis`, `is_active`) VALUES
-    ('1', '2023-05-01', '2023-04-01', 'deskripsi', 'Assessment 1', 'assessment', FALSE),
-    ('2', '2023-06-01', '2023-05-02', 'deskripsi', 'Training 1', 'training', FALSE),
-    ('3', '2023-07-01', '2023-06-02', 'deskripsi', 'Assessment 2', 'assessment', TRUE),
-    ('4', '2023-08-01', '2023-07-02', 'deskripsi', 'Training 2', 'training', FALSE),
+    ('1', '2023-05-01', '2023-04-01', 'Periode Assessment pertama', 'Assessment 1', 'assessment', FALSE),
+    ('2', '2023-08-01', '2023-05-02', 'Periode Training pertama', 'Training 1', 'training', FALSE),
+    ('3', '2023-09-01', '2023-08-02', 'Periode Assessment kedua', 'Assessment 2', 'assessment', TRUE),
+    ('4', '2023-12-31', '2023-09-02', 'Periode Training kedua', 'Training 2', 'training', FALSE),
     ('5', '2020-03-16', '2020-02-16', 'Periode Assessment Dummy 2020', 'Assessment 0a', 'assessment', FALSE),
 	('6', '2021-03-16', '2021-02-16', 'Periode Assessment Dummy 2021', 'Assessment 0b', 'assessment', FALSE),
 	('7', '2022-03-16', '2022-02-16', 'Periode Assessment Dummy 2022', 'Assessment 0c', 'assessment', FALSE);
@@ -1170,9 +1170,9 @@ INSERT IGNORE INTO `review_assessment` (id_review_assessment, count, rerata_gap,
 
 INSERT IGNORE INTO `training_plan` (id_training_plan, nama, budget, date_end, date_start, deskripsi, status, id_event, id_training) VALUES
     ('1', 'T-01', '1000000', '2023-05-26', '2023-05-20', 'deskripsi', '3', '2', '1 '),
-    ('2', 'T-02', '2000000', '2023-05-10', '2023-05-08', 'deskripsi', '1', '2', '2 '),
-    ('3', 'T-03', '1000000', '2023-06-10', '2023-06-07', 'deskripsi', '0', '2', '3 '),
-    ('4', 'T-04', '2000000', '2023-06-30', '2023-06-24', 'deskripsi', '0', '2', '4');
+    ('2', 'T-02', '2000000', '2023-06-10', '2023-05-08', 'deskripsi', '1', '2', '2 '),
+    ('3', 'T-03', '1000000', '2023-07-18', '2023-06-07', 'deskripsi', '0', '2', '3 '),
+    ('4', 'T-04', '2000000', '2023-08-30', '2023-07-15', 'deskripsi', '0', '2', '4');
 
 INSERT IGNORE INTO `training_plan_user` (id_training_plan_taken_user, status, id_training_plan, user_uuid) VALUES
     ('1', 'absen', '1', 'zxy234ib834'),

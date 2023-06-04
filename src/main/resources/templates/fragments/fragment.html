@@ -90,7 +90,7 @@
                         <a th:href="@{/review}">Review</a></li>
                   <li th:if="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('admin') || #authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('executive')}">
                      <a th:href="@{/report}">Report</a></li>
-                  <li th:if="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('admin') || #authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('executive')}">
+                  <li th:if="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('admin') || #authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('executive')  || #authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('assessor')} ">
                      <a th:href="@{/history-assessment}">History</a></li>
                 </ul>
               </li>

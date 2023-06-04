@@ -2,6 +2,7 @@ package com.burat.simpel.controller;
 
 import java.security.Principal;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,6 +51,7 @@ public class TrainingPlanController {
     public String viewTrainingPlan(@PathVariable Long id, Model model) {
         TrainingPlanModel trainingPlanModel = trainingPlanService.getTrainingPlanById(id);
         model.addAttribute("listUserTrainingPlan", trainingPlanModel.getUserInTrainingPlan());
+        model.addAttribute("trainingPlanModel",trainingPlanModel);
         model.addAttribute("idTrainingPlan", id);
         model.addAttribute("idTraining", trainingPlanModel.getIdTraining());
         model.addAttribute("nama", trainingPlanModel.getNama());
@@ -326,20 +328,31 @@ public class TrainingPlanController {
             redirectAttributes.addFlashAttribute("activeTrainingPeriod",true);
 
             TrainingPlanModel trainingPlanModel = trainingPlanService.getTrainingPlanById(id);
-            switch (trainingPlanModel.getStatus()) {
-                case 1:
-                    trainingPlanModel.setStatus(2);
-                    break;
-                case 2:
+            if (trainingPlanModel.getStatus() == 2){
+                // Current status = active
+                // want to change from active ==> done
+                if (LocalDate.now().isBefore(trainingPlanModel.getDateEnd())) {
+                    redirectAttributes.addFlashAttribute("errortext","Tidak bisa mengubah status training menjadi \"done\" karena belum mencapai tanggal berakhir training");
+                    return "redirect:/training-plan/" + id;
+                } else {
                     trainingPlanModel.setStatus(3);
-                    break;
-                case 3:
-                    trainingPlanModel.setStatus(4);
-                    break;
-                default:
-                    trainingPlanModel.setStatus(1);
-                    break;
+                }
             }
+            else if (trainingPlanModel.getStatus() ==1){
+                // Current status = confirmed
+                // want to change from confirmed ==> active
+                if (LocalDate.now().isBefore(trainingPlanModel.getDateStart())) {
+                    redirectAttributes.addFlashAttribute("errortext","Tidak bisa mengubah status training menjadi \"active\" karena belum mencapai tanggal mulai training");
+                    return "redirect:/training-plan/" + id;
+                } else {
+                    trainingPlanModel.setStatus(2);
+                }
+            }
+            else {
+                // Current status: in review, or done
+                trainingPlanModel.setStatus(Math.min(trainingPlanModel.getStatus()+1,3));
+            }
+
             trainingPlanService.addTrainingPlan(trainingPlanModel);
             redirectAttributes.addFlashAttribute("successtext", "Status Training berhasil diubah!");
             model.addAttribute("trainingPlanModel", trainingPlanModel);

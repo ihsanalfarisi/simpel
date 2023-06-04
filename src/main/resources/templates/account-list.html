@@ -12,11 +12,11 @@
     <div class="buttons" style="margin-left: 43px;">
         <h5>Tampilkan berdasarkan Role</h5>
         <br>
-        <a th:href="@{/account-management/}"  style="text-decoration:none"><button class="btn-hover" th:classappend="${status.equals('all')} ? 'color-1':'color-2'" type="button">All</button></a>
-        <a  th:href="@{/account-management/admin/}"  style="text-decoration:none"><button class="btn-hover" th:classappend="${status.equals('admin')} ? 'color-1':'color-2'"  type="button">Admin</button></a>
-        <a  th:href="@{/account-management/executive/}"  style="text-decoration:none"><button class="btn-hover" th:classappend="${status.equals('executive')} ? 'color-1':'color-2'"  type="button">Executive</button></a>
-        <a  th:href="@{/account-management/assessor/}"  style="text-decoration:none"><button class="btn-hover" th:classappend="${status.equals('assessor')} ? 'color-1':'color-2'"  type="button">Assessor</button></a>
-        <a  th:href="@{/account-management/user/}"  style="text-decoration:none"><button class="btn-hover" th:classappend="${status.equals('user')} ? 'color-1':'color-2'"  type="button">User</button></a>
+        <a th:href="@{/account-management/}"  style="text-decoration:none"><button class="btn-hover-2" th:classappend="${status.equals('all')} ? 'color-2':'color-1'" type="button">All</button></a>
+        <a  th:href="@{/account-management/admin/}"  style="text-decoration:none"><button class="btn-hover-2" th:classappend="${status.equals('admin')} ? 'color-2':'color-1'"  type="button">Admin</button></a>
+        <a  th:href="@{/account-management/executive/}"  style="text-decoration:none"><button class="btn-hover-2" th:classappend="${status.equals('executive')} ? 'color-2':'color-1'"  type="button">Executive</button></a>
+        <a  th:href="@{/account-management/assessor/}"  style="text-decoration:none"><button class="btn-hover-2" th:classappend="${status.equals('assessor')} ? 'color-2':'color-1'"  type="button">Assessor</button></a>
+        <a  th:href="@{/account-management/user/}"  style="text-decoration:none"><button class="btn-hover-2" th:classappend="${status.equals('user')} ? 'color-2':'color-1'"  type="button">User</button></a>
     </div>
     <div th:if="${successtext} " th:replace="fragments/fragment :: alert-success-fragment(successtext=${successtext})"></div>
     <div th:if="${errortext} " th:replace="fragments/fragment :: alert-error-fragment(errortext=${errortext})"></div>
