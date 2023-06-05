@@ -14,9 +14,12 @@
         <h1 class="text">Training Plan</h1>
         <div style="margin-left: 43px;">
             <br>
-            <a th:if="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('admin')}"
+            <div th:if="${activeTrainingPeriod}">
+
+                <a th:if="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('admin')}"
                 th:href="@{/training-plan/add}"><button class="btn-hover" th:classappend="'color-1'">+ Add
                     Training</button></a>
+            </div>
         </div>
         <div th:if="${successtext}"
             th:replace="fragments/fragment :: alert-success-fragment(successtext=${successtext})"></div>

@@ -14,9 +14,9 @@
         <div th:if="${errortext} " th:replace="fragments/fragment :: alert-error-fragment(errortext=${errortext})"></div>
     </div>
     <div  th:if="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('admin')}">
-        <form th:action="@{/history-assessment/admin-filter}" method="get">
             <div class="container">
                 <div class="card m-4 p-4">
+                    <form th:action="@{/history-assessment/admin-filter}" method="get">
                     <div class="justify-content-center">
                         <h3>Filter By</h3>
                         <div class="row">
@@ -49,22 +49,19 @@
                                     </div>
                                 </select>
                             </div>
-
                         </div>
                         <br>
                         <div class="row">
                             <div class="col-2">
-                                <button class="btn btn-primary" type="submit" name="save">Search</button>
-                            </div>
-                            <div class="col-2">
-                                <a th:href="@{/history-assessment}"><button class="btn btn-secondary">View All</button></a>
+                                <button class="btn-hover-2 color-2 btn-primary" type="submit" name="save">Submit</button>
                             </div>
                         </div>
-
                     </div>
+                    </form>
+                    <a th:href="@{/history-assessment}" style="text-decoration:none"><button class="btn-hover-2 color-1" type="button">View All</button></a>
+
                 </div>
             </div>
-        </form>
         <div class="container"  th:if="${assessmentListQuery}">
             <div class="card m-4 p-4">
                 <div class="justify-content-center">

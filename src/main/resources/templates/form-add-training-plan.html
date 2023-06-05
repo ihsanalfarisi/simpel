@@ -19,6 +19,17 @@
                         <br>
                         <h4 th:text="'Periode assessment: '+${eventPeriod.periodName}"></h4>
                         <br>
+                        <div class="row">
+                            <div class="col-2">
+                                <p>Tanggal periode dimulai:</p>
+                                <p>Tanggal periode selesai:</p>
+                            </div>
+                            <div class="col-10">
+                                <p th:text="${#temporals.format(eventPeriod.dateStart, 'dd MMMM yyyy')}"></p>
+                                <p th:text="${#temporals.format(eventPeriod.dateEnd, 'dd MMMM yyyy')}"></p>
+                            </div>
+                        </div>
+                        <br>
                         <form th:action="@{/training-plan/add}" th:object="${trainingPlanModel}" method="POST">
 
                             Training: <br>
@@ -80,11 +91,9 @@
                                 </tbody>
                             </table>
 
-                            <a th:href="@{/training-plan}">
-                                <input type="button" class="btn btn-secondary" value="Back">
-                            </a>
-                            <button class="btn btn-primary" type="submit" name="save">Submit</button>
-                        </form>
+                            <a th:href="@{/training-plan}" style="text-decoration:none"><button class="btn-hover-2 color-1" type="button">Kembali</button></a>
+                            <button class="btn-hover-2 color-2 btn-primary" type="submit" name="save">Submit</button>
+
                         </form>
                     </div>
                 </div>

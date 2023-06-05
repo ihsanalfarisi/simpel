@@ -96,9 +96,9 @@
                                                     <h5>Tanggal Lahir</h5>
                                                 </td>
                                                 <td>
-                                                    <input type="datetime-local" readonly name="tanggalLahir"
+                                                    <input type="date" readonly name="tanggalLahir"
                                                         th:field="*{tanggalLahir}" th:value="*{tanggalLahir}"
-                                                        class="form-control mb-1" id="date" placeholder="Date of Birth"
+                                                        class="form-control mb-1" placeholder="Date of Birth"
                                                         required><!--                                    <p th:text="${modelAkun.getNoTelepon()}"></p>-->
                                                 </td>
                                             </tr>
@@ -173,10 +173,10 @@
                                     </table>
                                     <input th:value="${modelAkun.getUsername()}" type="hidden" name="currentUsername">
                                     <a th:href="@{/profile}"
-                                        style="text-decoration:none"><button class="btn-hover color-2"
-                                            type="button">Batalkan Perubahan</button></a>
-                                    <button th:value="${modelAkun.getRole()}" class="btn-hover color-1" type="submit"
-                                        name="currentRole">Simpan Perubahan</button>
+                                        style="text-decoration:none"><button class="btn-hover-2 color-1"
+                                            type="button">Kembali</button></a>
+                                    <button th:value="${modelAkun.getRole()}" class="btn-hover-2 color-2" type="submit"
+                                        name="currentRole">Simpan </button>
                                     <!--                                    <input type="submit" style="text-decoration:none" class="btn-hover color-1" name="currentRow" value="Simpan Perubahan">-->
                                 </form>
                             </div>
