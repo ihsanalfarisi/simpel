@@ -13,6 +13,7 @@ import javax.persistence.*;
 import javax.swing.text.StyledEditorKit;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -57,8 +58,8 @@ public class AccountModel {
 
     @NotNull
     @Column(name = "tanggal_lahir",nullable = false)
-    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
-    private LocalDateTime tanggalLahir;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate tanggalLahir;
 
     @NotNull
     @Size(max = 100)

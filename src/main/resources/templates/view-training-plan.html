@@ -17,7 +17,7 @@
                 <div class="justify-content-center">
                     <div class="row">
                         <div class="col-10">
-                            <h2 th:text="'Training' + ' ' + ${idTraining.nama}"></h2>
+                            <h1 th:text="'Training' + ' ' + ${idTraining.nama}"></h1>
                         </div>
                         <div th:if="${successtext}"
                             th:replace="fragments/fragment :: alert-success-fragment(successtext=${successtext})">
@@ -81,7 +81,9 @@
                             </div>
                         </div>
                     </div>
-                    <h2>Periode Training</h2>
+                    <br>
+
+                    <h3>Periode Training</h3>
                     <div class="row">
                         <div class="col-2" style="font-weight: bold">Nama</div>
                         <div class="col-10" th:text="${trainingPlanModel.eventPeriodModel.getPeriodName()}"></div>
@@ -95,15 +97,7 @@
                         <div class="col-10" th:text="${#temporals.format( trainingPlanModel.eventPeriodModel.getDateEnd(), 'dd MMMM yyyy')}"></div>
                     </div>
                     <br>
-                    <h2>Detail Training Plan</h2>
-                    <div class="row">
-                        <div class="col-2" style="font-weight: bold">Nama</div>
-                        <div class="col-10" th:text="${nama}"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-2" style="font-weight: bold">Nama</div>
-                        <div class="col-10" th:text="${nama}"></div>
-                    </div>
+                    <h3>Detail Training Plan</h3>
                     <div class="row">
                         <div class="col-2" style="font-weight: bold">Nama</div>
                         <div class="col-10" th:text="${nama}"></div>
@@ -178,11 +172,11 @@
                             method="post" th:object="${trainingPlanModel}"
                             th:action="@{/training-plan/} + ${idTrainingPlan}" style="position: relative; display: flex;">
                             <a th:switch="${status}">
-                                <button th:case="0" class="btn-hover-2 color-1" type="submit"
+                                <button th:case="0" class="btn-hover-2 color-2" type="submit"
                                     name="confirm">Confirm</button>
-                                <button th:case="1" class="btn-hover-2 color-1" type="submit"
+                                <button th:case="1" class="btn-hover-2 color-2" type="submit"
                                     name="confirm">Set to Active</button>
-                                <button th:case="2" class="btn-hover-2 color-1" type="submit"
+                                <button th:case="2" class="btn-hover-2 color-2" type="submit"
                                     name="confirm">Set to Done</button>
                             </a>
                         </form>

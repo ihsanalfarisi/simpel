@@ -9,7 +9,7 @@
 </head>
 <body>
 <nav th:replace="fragments/fragment :: navbar"></nav>
-<div class="container">
+<div class="Test">
   <div class="card m-4 p-4">
     <div class="card-body">
       <div class="justify-content-center">
@@ -89,7 +89,7 @@
         </table>
         <br>
         <a th:href="@{/training-catalog}"><button class="btn-hover-2 color-1">Kembali</button> </a>
-        <a th:href="@{/view-review/} + ${training.trainingId}"><button class="btn-hover-2 color-2">Lihat Review</button></a>
+        <a th:if="${#authorization.getAuthentication().getAuthorities()[0].getAuthority().toString().equals('admin')}" th:href="@{/view-review/} + ${training.trainingId}"><button class="btn-hover-2 color-2">Lihat Review</button></a>
       </div>
     </div>
   </div>

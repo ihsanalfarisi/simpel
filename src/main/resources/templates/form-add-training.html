@@ -47,7 +47,7 @@
                 </select>
               </td>
               <td>
-                <input class="form-control" type="number" th:field="*{levelOfTraining[__${iterationStatus.index}__].level}" />
+                <input class="form-control" type="number"  min="1" max="5" th:field="*{levelOfTraining[__${iterationStatus.index}__].level}" />
               </td>
               <td>
                 <button th:value="${iterationStatus.index}" class="btn btn-danger" type="submit"
@@ -56,9 +56,9 @@
             </tr>
             </tbody>
           </table>
+          <a th:href="@{/training-catalog}" style="text-decoration:none"><button class="btn-hover-2 color-1" type="button">Kembali</button></a>
+          <button class="btn-hover-2 color-2 btn-primary" type="submit" name="save">Submit</button>
 
-          <a class="btn btn-secondary" th:href="@{/training-catalog}">Back</a>
-          <button class="btn btn-primary" type="submit" name="save">Submit</button>
         </form>
       </div>
     </div>
